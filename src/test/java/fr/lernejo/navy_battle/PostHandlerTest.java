@@ -25,7 +25,7 @@ class PostHandlerTest {
         Assertions.assertEquals(202, response.statusCode());
     }
     @Test
-    void CheckTestForDelMeth() throws IOException, InterruptedException {
+    void another_ping_cheking() throws IOException, InterruptedException {
         new Serveur(9877);
 
         HttpClient client = HttpClient.newHttpClient();
