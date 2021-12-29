@@ -24,4 +24,13 @@ class PostHandlerTest {
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         Assertions.assertEquals(202, response.statusCode());
     }
+    @Test
+    void CheckTestForDelMeth() throws IOException, InterruptedException {
+        new Serveur(9877);
+
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://localhost:9877/api/game/start")).DELETE().build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        Assertions.assertEquals(404, response.statusCode());
+    }
 }
