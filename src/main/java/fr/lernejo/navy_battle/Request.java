@@ -13,7 +13,7 @@ public class Request {
             .setHeader("Accept", "application/json").setHeader("Content-Type", "application/json")
             .POST(HttpRequest.BodyPublishers.ofString("{\"id\":\"1\", \"url\":\"http://localhost:" + port + "\", \"message\":\"hello the winner\"}")).build();
 
-        HttpResponse<String> response = httpClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response.body());
+        HttpResponse<String> res = httpClient.send(postRequest, HttpResponse.BodyHandlers.ofString());
+        System.out.println(res.body());
     }
 }

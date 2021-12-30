@@ -3,6 +3,7 @@ package fr.lernejo.navy_battle;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -22,7 +23,7 @@ public class PostHandler implements HttpHandler {
         }
         else {
             Json body = parser(exchange);
-            if (body.url.equals("\"\"") || body.id.equals("\"\"") || body.message.equals("\"\"") || body == null) {
+            if (body.URL.equals("\"\"") || body.ID.equals("\"\"") || body.MSG.equals("\"\"") || body == null) {
                 msg(exchange, "format no valide", 400);
             }
             else {
@@ -68,7 +69,7 @@ public class PostHandler implements HttpHandler {
             try {
                 body = objectMapper.readValue(streamString, Json.class);
             } catch (IllegalArgumentException e) {
-                exchange.sendResponseHeaders(400, "Not Found !".length());
+                exchange.sendResponseHeaders(400, "not exist".length());
                 throw new IllegalArgumentException();
             }
         }
