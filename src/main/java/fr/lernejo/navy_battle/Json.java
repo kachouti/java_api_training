@@ -4,18 +4,18 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Json {
-    public final String ID;
-    public final String URL;
-    public final String MSG;
+    public final String id;
+    public final String url;
+    public final String msg;
 
     public Json(
         @JsonProperty("id") JsonNode id,
         @JsonProperty("url") JsonNode url,
         @JsonProperty("message") JsonNode message) {
 
-        this.ID = id.toString();
-        this.URL = url.toString();
-        this.MSG = message.toString();
+        this.id = id.toString();
+        this.url = url.toString();
+        this.message = message.toString();
     }
 
 }
