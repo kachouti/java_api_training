@@ -23,7 +23,7 @@ public class PostHandler implements HttpHandler {
         }
         else {
             Json body = parser(exchange);
-            if (body.URL.equals("\"\"") || body.ID.equals("\"\"") || body.MSG.equals("\"\"") || body == null) {
+            if (body.url.equals("\"\"") || body.id.equals("\"\"") || body.message.equals("\"\"") || body == null) {
                 msg(exchange, "format no valide", 400);
             }
             else {
