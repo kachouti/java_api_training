@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class Json {
     public final String id;
     public final String url;
-    public final String msg;
+    public final String message;
 
     public Json(
         @JsonProperty("id") JsonNode id,
